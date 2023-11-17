@@ -17,9 +17,8 @@ mod menu;
 fn main() {
     App::new()
         .add_plugins((
-            DefaultPlugins
-                .build()
-                .add_before::<bevy::asset::AssetPlugin, _>(EmbeddedAssetPlugin),
+            EmbeddedAssetPlugin::default(),
+            DefaultPlugins,
             EguiPlugin,
             EditorPlugin::default(),
             CursorInfoPlugin,
